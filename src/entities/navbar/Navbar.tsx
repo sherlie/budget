@@ -1,16 +1,16 @@
 import type { FC } from 'react';
 import { Link } from 'react-router';
+import { nav, navLink, navList } from './Navbar.css.ts';
 
 const Navbar: FC = () => {
-
   return (
-    <nav>
-      <ul>
+   <nav className={nav}>
+      <ul className={navList}>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" className={navLink}>Home</Link>
         </li>
         <li>
-          <Link to="/categories">Categories</Link>
+          <Link to="/categories" className={navLink}>Categories</Link>
         </li>
       </ul>
     </nav>
