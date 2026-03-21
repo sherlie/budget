@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import HomePage from "../pages/HomePage";
 import CategoriesPage from "../pages/CategoriesPage";
+import Navbar from "../entities/navbar/NavBar";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/categories" element={<CategoriesPage />} />
       </Routes>
+      <Navbar />
     </BrowserRouter>
   );
 }
