@@ -18,4 +18,12 @@ export const navLink = style({
   textDecoration: 'none',
   fontWeight: 'bold',
   color: 'white',
+  padding: 16,
 })
+
+export const activeNavLink = style([
+    navLink, 
+    {
+        backgroundColor: 'rgb(199, 157, 239)',
+    }
+]);
