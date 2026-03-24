@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import PieChart from "../entities/pieChart/PieChart";
+import PieChart from "../components/pieChart/PieChart";
 
 const HomePage: FC = () => {
   return (
