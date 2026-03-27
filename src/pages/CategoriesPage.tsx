@@ -1,5 +1,6 @@
 import { useState, type FC } from "react";
 import CategoryForm from "../components/forms/CategoryForm";
+import Category from "../components/category/Category";
 
 const mockBudgetCategories = [
   { name: "Food", amount: 200 },
@@ -17,17 +18,7 @@ const CategoriesPage: FC = () => {
     <>
       <h1>Categories</h1>
       {categories.map((category) => (
-        <div
-          key={category.name}
-          style={{
-            padding: "1em",
-            margin: "0.3em",
-            borderRadius: "1em",
-            backgroundColor: "#b0acac",
-          }}
-        >
-          {category.name} {category.amount}
-        </div>
+        <Category name={category.name} amount={category.amount} />
       ))}
       <CategoryForm onSubmit={handleSumbit} />
     </>
