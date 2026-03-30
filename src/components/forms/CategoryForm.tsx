@@ -1,4 +1,5 @@
 import { useState, type FC } from "react";
+import { form } from "./Form.css";
 
 type CategoryFormProps = {
   onSubmit: (name: string) => void;
@@ -14,7 +15,7 @@ const CategoryForm: FC<CategoryFormProps> = ({ onSubmit }) => {
   }
 
   return (
-    <form onSubmit={(event) => handleSubmit(event)}>
+    <form onSubmit={(event) => handleSubmit(event)} className={form}>
       <input
         name="name"
         placeholder="Category name"

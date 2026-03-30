@@ -1,8 +1,12 @@
 import { style } from "@vanilla-extract/css";
 
 export const category = style({
-  padding: "1em",
-  margin: "0.3em",
+  display: "flex",
+  justifyContent: "space-between",
+  padding: "0.8em 1.2em",
+  margin: "0.5em",
   borderRadius: "1em",
-  backgroundColor: "#d7d7d7",
+  backgroundColor: "#e8e8e8",
+  fontStyle: "italic",
+  fontFamily: "Arial",
 });

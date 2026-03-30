@@ -10,7 +10,8 @@ const Category: FC<CategoryProps> = ({ name, amount }) => {
 
   return (
     <div key={name} className={category}>
-      {name} {amount}
+      <span>{name}</span>
+      <span>{amount}</span>
     </div>
   );
 };
