@@ -1,28 +1,26 @@
-import { useState, type FC } from "react";
+import { type FC } from "react";
 import CategoryForm from "../components/forms/CategoryForm";
 import Category from "../components/category/Category";
+import { observer } from "mobx-react";
+import { useStore } from "../stores/storeContext";
 
-const mockBudgetCategories = [
-  { name: "Food", amount: 200 },
-  { name: "House", amount: 600 },
-  { name: "Leisure", amount: 150 },
-];
+const CategoriesPage: FC = observer(() => {
 
-const CategoriesPage: FC = () => {
-  const [categories, setCategories] = useState(mockBudgetCategories);
+  const { categoriesStore } = useStore();
 
   function handleSumbit(newCategoryName: string) {
-    setCategories([...categories, { name: newCategoryName, amount: 0 }]);
+    categoriesStore.addNewCategory(newCategoryName);
   }
+
   return (
     <>
       <h1>Categories</h1>
-      {categories.map((category) => (
-        <Category name={category.name} amount={category.amount} />
+      {categoriesStore.categories.map((category) => (
+        <Category key={category.name} name={category.name} amount={category.amount} />
       ))}
       <CategoryForm onSubmit={handleSumbit} />
     </>
   );
-};
+});
 
 export default CategoriesPage;
