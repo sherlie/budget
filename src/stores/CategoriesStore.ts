@@ -2,10 +2,12 @@ import { makeAutoObservable } from "mobx";
 import type { Category } from "../types";
 
 const mockBudgetCategories: Category[] = [
-  { name: "Food", amount: 200 },
-  { name: "House", amount: 600 },
-  { name: "Leisure", amount: 150 },
+  { id: 0, name: "Food", amount: 200 },
+  { id: 1, name: "House", amount: 600 },
+  { id: 2, name: "Leisure", amount: 150 },
 ];
+
+let mockCurrentId = 3;
 
 export class CategoriesStore {
     private _categories: Category[] = mockBudgetCategories;
@@ -15,12 +17,10 @@ export class CategoriesStore {
     }
 
     public get categories(): Category[] {
-        console.log(this._categories);
         return this._categories;
     }
 
     public addNewCategory(name: string): void {
-        console.log(this._categories);
-        this._categories.push({ name: name, amount: 0} satisfies Category);
+        this._categories.push({ name: name, amount: 0, id: mockCurrentId++} satisfies Category);
     }
 }

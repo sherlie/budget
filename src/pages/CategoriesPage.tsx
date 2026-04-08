@@ -16,7 +16,7 @@ const CategoriesPage: FC = observer(() => {
     <>
       <h1>Categories</h1>
       {categoriesStore.categories.map((category) => (
-        <Category key={category.name} name={category.name} amount={category.amount} />
+        <Category key={category.id} name={category.name} amount={category.amount} />
       ))}
       <CategoryForm onSubmit={handleSumbit} />
     </>
