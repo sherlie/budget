@@ -1,0 +1,35 @@
+{
+  "name": "budget-server",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "nest build",
+    "start": "node dist/main.js",
+    "start:dev": "nest start --watch",
+    "migrate": "knex --knexfile knexfile.ts migrate:latest",
+    "migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback",
+    "seed": "curl -sf -X POST http://localhost:${PORT:-3000}/dev/seed | cat",
+    "seed:clear": "curl -sf -X DELETE http://localhost:${PORT:-3000}/dev/seed"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/config": "^3.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/platform-fastify": "^10.0.0",
+    "fastify": "^4.0.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "knex": "^3.0.0",
+    "mysql2": "^3.0.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.0.0",
+    "@types/node": "^24.0.0",
+    "@types/uuid": "^9.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  }
+}

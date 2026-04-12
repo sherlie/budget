@@ -1,0 +1,12 @@
+FROM node:24-alpine
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm ci
+
+EXPOSE 5173
+
+# src/ and public/ are mounted as volumes at runtime for hot reload
+# --host binds Vite to 0.0.0.0 so it's reachable outside the container
+CMD ["npm", "run", "dev", "--", "--host"]
