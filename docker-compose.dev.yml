@@ -2,10 +2,10 @@ services:
   mysql:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${DB_NAME}
-      MYSQL_USER: ${DB_USER}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db-budget
+      MYSQL_USER: budget
+      MYSQL_PASSWORD: budget-pwd
     volumes:
       - mysql_data:/var/lib/mysql
     healthcheck:
@@ -27,9 +27,9 @@ services:
       PORT: 3000
       DB_HOST: mysql
       DB_PORT: 3306
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
-      DB_NAME: ${DB_NAME}
+      DB_USER: budget
+      DB_PASSWORD: budget-pwd
+      DB_NAME: db-budget
     volumes:
       - ./server/src:/app/src
       - ./server/tsconfig.json:/app/tsconfig.json
