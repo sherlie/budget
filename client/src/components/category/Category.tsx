@@ -6,8 +6,7 @@ interface CategoryProps {
   amount: number;
 }
 
-const Category: FC<CategoryProps> = ({ name, amount }) => {
-
+const Category: FC<CategoryProps> = ({ name, amount = 0 }) => {
   return (
     <div key={name} className={category}>
       <span>{name}</span>

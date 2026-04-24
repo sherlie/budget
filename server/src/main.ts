@@ -23,6 +23,8 @@ async function bootstrap() {
     new FastifyAdapter(),
   );
 
+  app.enableCors();
+
   app.useGlobalFilters(new HttpExceptionFilter());
 
   app.useGlobalPipes(
