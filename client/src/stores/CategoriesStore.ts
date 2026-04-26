@@ -1,4 +1,4 @@
-import { makeAutoObservable, runInAction } from "mobx";
+import { makeAutoObservable } from "mobx";
 import type { Category } from "../types";
 
 let mockCurrentId = 3;
@@ -8,14 +8,6 @@ export class CategoriesStore {
 
     public constructor() {
         makeAutoObservable(this);
-    }
-
-    public fetchCategories = async () => {
-      const response = await fetch('http://localhost:3000/categories');
-      const categories = await response.json();
-      runInAction(() => {
-        this._categories = categories;
-      });
     }
 
     public get categories(): Category[] {
