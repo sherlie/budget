@@ -5,7 +5,6 @@ export class RootStore {
 
     constructor() {
         this.categoriesStore = new CategoriesStore();
-        this.categoriesStore.fetchCategories();
     }
 }
 
