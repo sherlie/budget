@@ -8,6 +8,7 @@ const Navbar: FC = () => {
       <ul className={navList}>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/categories">Categories</NavLink>
+        <NavLink to="/transactions">Transactions</NavLink>
       </ul>
     </nav>
   );

@@ -3,6 +3,7 @@ import HomePage from "../pages/HomePage";
 import CategoriesPage from "../pages/CategoriesPage";
 import Navbar from "../components/navbar/Navbar";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import LatestTransactionsPage from "../pages/LatestTransactionsPage";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/categories" element={<CategoriesPage />} />
+          <Route path="/transactions" element={<LatestTransactionsPage />} />
         </Routes>
         <Navbar />
       </BrowserRouter>

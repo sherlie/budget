@@ -18,6 +18,8 @@ const CategoriesPage: FC = observer(() => {
     addCategoryMutation.mutate({ name: newCategoryName, color: "#FFF"})
   }
 
+  console.log(data);
+
   return (
     <>
       <h1>Categories</h1>
