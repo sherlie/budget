@@ -2,7 +2,7 @@ import { type FC } from "react";
 import CategoryForm from "../components/forms/CategoryForm";
 import Category from "../components/category/Category";
 import { observer } from "mobx-react";
-import { useCategories } from "../queries/fetchCategories";
+import { useCategories } from "../queries/useCategories";
 import { useAddCategory } from "../queries/addCategory";
 
 const CategoriesPage: FC = observer(() => {
